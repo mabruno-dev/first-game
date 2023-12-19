@@ -1,9 +1,17 @@
-function jump() {
+function jump(event) {
   const mario = document.querySelector(".mario");
-  mario.classList.add("jump");
-  setTimeout(() => {
-    mario.classList.remove("jump");
-  }, 700);
+  const key = event.key
+  if(key == "ArrowLeft"){
+    mario.classList.add("jump-gainer");
+    setTimeout(() => {
+      mario.classList.remove("jump-gainer");
+    }, 700);
+  }else if(key == "ArrowRight"){
+    mario.classList.add("jump-front")
+    setTimeout(() => {
+      mario.classList.remove("jump-front");
+    }, 700);
+  }
 }
 
 const loop = setInterval(() => {

@@ -24,6 +24,14 @@ body {
     overflow: hidden;
 }
 
+
+.contador{
+    position: absolute;
+    color: white;
+    top: 40px;
+    right: 100px;
+}
+
 .pipe{
     position: absolute;
     bottom: 0;
@@ -46,8 +54,12 @@ body {
     /* 92 */
 }
 
-.jump{
-    animation: mario-animation 700ms ease-out;
+.jump-gainer{
+    animation: mario-gainer 700ms ease-out;
+}
+
+.jump-front{
+    animation: mario-front 700ms ease-out;
 }
 
 @keyframes pipe-animation{
@@ -68,9 +80,10 @@ body {
     }
 }
 
-@keyframes mario-animation {
+@keyframes mario-gainer {
     0%{
         bottom: 0;
+        transform: rotate(360deg);
     }
     40%{
         bottom: 230px;
@@ -89,10 +102,43 @@ body {
 
     80%{
         bottom: 100px;
+        transform: rotate(0deg);
     }
 
     100%{
         bottom: 0;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes mario-front {
+    0%{
+        bottom: 0;
+        transform: rotate(0deg);
+    }
+    40%{
+        bottom: 230px;
+    }
+
+    50%{
+        bottom: 230px;
+    }
+    60%{
+        bottom: 200px;
+    }
+
+    70%{
+        bottom: 160px;
+    }
+
+    80%{
+        bottom: 100px;
+        transform: rotate(360deg);
+    }
+
+    100%{
+        bottom: 0;
+        transform: rotate(360deg);
     }
 }
 
